@@ -5,7 +5,7 @@ Class: CPSC 326, Section 2
 Assignment: Final Project
 */
 
-function underWeight(var weight){
+function underWeight(weight){
     if (weight < 20){
         return true
     }
@@ -14,7 +14,7 @@ function underWeight(var weight){
     }
 }
 
-function underLength(var length){
+function underLength(length){
     if (length < 3){
         return true
     }
@@ -23,7 +23,7 @@ function underLength(var length){
     }
 }
 
-function convertToFeet(var num, var unit){
+function convertToFeet(num, unit){
     if (unit == "inches"){
         return num / 12;
     }
@@ -37,7 +37,7 @@ function convertToFeet(var num, var unit){
     }
 }
 
-function convertToPounds(var num, var unit){
+function convertToPounds(num, unit){
     if (unit == "kilograms"){
         return num * 2.205;
     } else {
@@ -45,24 +45,24 @@ function convertToPounds(var num, var unit){
     }
 }
 
-function isCompostableMaterial(var material){
-    if (material == "Organics" || material == "Wood" || material = "Yard Debris"){
+function isCompostableMaterial(material){
+    if (material == "Organics" || material == "Wood" || material == "Yard Debris"){
         return true;
     } else {
         return false;
     }
 }
 
-function isRecyclableMaterial(var material){
-    if (material == "Aluminium" || material == "Cardboard" || material = "Paper" 
-        || material = "Plastic" || material = "Tin"){
+function isRecyclableMaterial(material){
+    if (material == "Aluminium" || material == "Cardboard" || material == "Paper" 
+        || material == "Plastic" || material == "Tin"){
         return true;
     } else {
         return false;
     }
 }
 
-function isCompostable(var material, var feet, var pounds){
+function isCompostable(material, feet, pounds){
     if (isCompostableMaterial(material)){
         if (underLength(feet)){
             if(underWeight(pounds)){
@@ -76,7 +76,7 @@ function isCompostable(var material, var feet, var pounds){
 
 
 
-function isRecyclable(var material, var feet, var pounds){
+function isRecyclable(material, feet, pounds){
     if (isRecyclableMaterial(material)){
         if (underLength(feet)){
             if(underWeight(pounds)){
@@ -89,7 +89,7 @@ function isRecyclable(var material, var feet, var pounds){
 }
 
 
-function destination(var material, var length, var lengthUnit, var weight, var weightUnit){
+function destination(material, length, lengthUnit, weight, weightUnit){
     if (isCompostable(material,convertToFeet(length,lengthUnit),convertToPounds(weight, weightUnit))){
         return "compost";
     }
@@ -100,13 +100,19 @@ function destination(var material, var length, var lengthUnit, var weight, var w
     }
 }
     
-
-
-
-
-
-
-
-
-
-
+document.addEventListener('DOMContentLoaded', function(event) {
+    document.getElementById('submit_button').addEventListener('click', function(event) {
+        
+        var material = document.getElementById('material_value').value;
+        
+        var weight      = document.getElementById('weight_value').value,
+            weight_unit = document.getElementById('weight_unit').value;
+            
+        var dim         = document.getElementById('dim_value').value,
+            dim_unit    = document.getElementById('dim_unit').value;
+        
+        var dest = destination(material, dim, dim_unit, weight, weight_unit);
+        
+        alert(dest);
+    });
+});
