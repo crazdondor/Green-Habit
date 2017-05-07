@@ -88,18 +88,18 @@ function isRecyclable(var material, var feet, var pounds){
     }
 }
 
-function destination(var material, var length, var weight){
-    if isCompostable(material,convertToFeet(length),convertToPounds(weight)){
+
+function destination(var material, var length, var lengthUnit, var weight, var weightUnit){
+    if (isCompostable(material,convertToFeet(length,lengthUnit),convertToPounds(weight, weightUnit))){
         return "compost";
     }
-    if isRecyclable(material,convertToFeet(length),convertToPounds(weight)){
+    if (isRecyclable(material,convertToFeet(length,lengthUnit),convertToPounds(weight, weightUnit))){
         return "recycle";
     } else {
         return "trash";
     }
 }
-
-
+    
 
 
 
