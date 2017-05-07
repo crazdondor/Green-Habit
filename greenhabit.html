@@ -7,6 +7,7 @@
     <title>Greenhabit</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:100|Quicksand:300|Roboto+Condensed" rel="stylesheet">
     <link href="CSS/greenhabit.css" type="text/css" rel="stylesheet">
+    <script src="greenhabit_rules.js"></script>
 </head>
 <body>
     <div id="background"></div>
@@ -28,8 +29,8 @@
                 <div class="form-content">
                     <div class="field">
                         <h3>Dimensions</h3>
-                        <input type="text" name="dimensions">
-                        <select>
+                        <input id="dim_value" type="text" name="dimensions">
+                        <select id="dim_unit">
                             <option>inches</option>
                             <option>centimeters</option>
                             <option>feet</option>
@@ -39,8 +40,8 @@
                     
                     <div class="field">
                         <h3>Weight</h3>
-                        <input type="text" name="weight">
-                        <select>
+                        <input id="weight_value" type="text" name="weight">
+                        <select id="weight_unit">
                             <option>pounds</option>
                             <option>kilograms</option>
                         </select>
@@ -49,7 +50,9 @@
                     <div class="field">
                         <h3>Material</h3>
                         <div id="materials">
-                            <select class="materials">
+                            <select id="material_value" class="materials">
+                                <option>Organics</option>
+                                <option>Yard Waste</option>
                                 <option>Aluminium</option>
                                 <option>Cardboard</option>
                                 <option>Ceramic</option>
