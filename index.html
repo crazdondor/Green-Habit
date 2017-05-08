@@ -10,7 +10,11 @@
     <script src="greenhabit_rules.js"></script>
 </head>
 <body>
-    <div id="background"></div>d
+    <div id="background"></div>
+    <div id="error">
+        <div class="error-content"></div>
+        <button onclick="hide_error();">OK</button>
+    </div>
     <div id="navbar">
         <ul>
             <li><a href="mailto:qbingham@zagmail.gonzaga.edu,bfalkenberg@zagmail.gonzaga.edu,mlee8@zagmail.gonzaga.edu?subject=Hello%20Greenhabit!&amp;body=Hey%20Guys,%20">Contact</a></li>
@@ -24,53 +28,66 @@
         <h2 class="subtitle">compost. recycle. <br> trash it if you have to.</h2>
         <div id="form-wrap">
             <form onsubmit="event.preventDefault();return false">
-                <h2 class="form-title">Calculate</h2>
-                <div class="form-content">
-                    <div class="field">
-                        <h3>Longest dimension</h3>
-                        <input id="dim_value" type="text" name="dimensions">
-                        <select id="dim_unit">
-                            <option>inches</option>
-                            <option>centimeters</option>
-                            <option>feet</option>
-                            <option>meters</option>
-                        </select>
+                <section id="results-panel" class="out--left">
+                    <div class="form-titlebar">
+                        <h2 class="form-title">Results</h2>
+                        <button class="form-titlebar-BackButton" id="BackToForm-button">Back</button>
                     </div>
-                    
-                    <div class="field">
-                        <h3>Weight</h3>
-                        <input id="weight_value" type="text" name="weight">
-                        <select id="weight_unit">
-                            <option>pounds</option>
-                            <option>kilograms</option>
-                        </select>
+                    <div class="form-content">
+                        <p>test</p>
                     </div>
-                    
-                    <div class="field">
-                        <h3>Material</h3>
-                        <div id="materials">
-                            <select id="material_value" class="materials">
-                                <option>Aluminium</option>
-                                <option>Cardboard</option>
-                                <option>Ceramic</option>
-                                <option>Organics</option>
-                                <option>Paper</option>
-                                <option>Plastic</option>
-                                <option>Pyrex</option>
-                                <option>Rubber</option>
-                                <option>Steel</option>
-                                <option>Tin</option>
-                                <option>Wood</option>
-                                <option>Yard Waste</option>
+                </section>
+                <section id="form-panel">
+                    <div class="form-titlebar">
+                        <h2 class="form-title">Calculate</h2>
+                    </div>
+                    <div class="form-content">
+                        <div class="field">
+                            <h3>Longest dimension</h3>
+                            <input id="dim_value" type="text" name="dimensions">
+                            <select id="dim_unit">
+                                <option>inches</option>
+                                <option>centimeters</option>
+                                <option>feet</option>
+                                <option>meters</option>
                             </select>
                         </div>
+                        
+                        <div class="field">
+                            <h3>Weight</h3>
+                            <input id="weight_value" type="text" name="weight">
+                            <select id="weight_unit">
+                                <option>pounds</option>
+                                <option>kilograms</option>
+                            </select>
+                        </div>
+                        
+                        <div class="field">
+                            <h3>Material</h3>
+                            <div id="materials">
+                                <select id="material_value" class="materials">
+                                    <option>Aluminium</option>
+                                    <option>Cardboard</option>
+                                    <option>Ceramic</option>
+                                    <option>Organics</option>
+                                    <option>Paper</option>
+                                    <option>Plastic</option>
+                                    <option>Pyrex</option>
+                                    <option>Rubber</option>
+                                    <option>Steel</option>
+                                    <option>Tin</option>
+                                    <option>Wood</option>
+                                    <option>Yard Waste</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="button-group">
+                            <input id="submit_button" class="button submit" type="submit" value="Submit"/>
+                            <input id="reset_button" class="button reset" type="reset" value="Reset Form"/>
+                        </div>
                     </div>
-                    
-                    <div class="button-group">
-                        <input id="submit_button" class="button submit" type="submit" value="Submit"/>
-                        <input id="reset_button" class="button reset" type="reset" value="Reset Form"/>
-                    </div>
-                </div>
+                </section>
             </form>
         </div>
     </div>
