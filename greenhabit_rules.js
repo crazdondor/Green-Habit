@@ -91,12 +91,16 @@ function isRecyclable(material, feet, pounds){
 
 function destination(material, length, lengthUnit, weight, weightUnit){
     if (isCompostable(material,convertToFeet(length,lengthUnit),convertToPounds(weight, weightUnit))){
-        return "compost";
+        return "Compost";
     }
     if (isRecyclable(material,convertToFeet(length,lengthUnit),convertToPounds(weight, weightUnit))){
-        return "recycle";
-    } else {
-        return "trash";
+        return "Recycle";
+    } 
+    if (material == "--Select material--") {
+        return "Please select a material";
+    }
+    else {
+        return "Trash";
     }
 }
     
