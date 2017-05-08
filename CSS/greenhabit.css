@@ -175,7 +175,7 @@ form > section {
     position: absolute;
     min-height: 382px;
     width: 100%;
-    transition: transform 500ms ease;
+    transition: transform 300ms ease;
 }
 
 form > section.out--left {
